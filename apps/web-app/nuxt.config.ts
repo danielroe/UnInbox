@@ -5,10 +5,10 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxthq/ui',
     '@vueuse/nuxt',
+    '@nuxtjs/hanko',
     'nuxt-security',
-    'nuxt-hanko',
     'nuxt-og-image',
-    ['@pinia/nuxt', { autoImports: ['defineStore', 'acceptHMRUpdate'] }]
+    '@pinia/nuxt'
   ],
 
   runtimeConfig: {
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in', duration: 300 }
   },
   ui: {
-    icons: 'mdi'
+    icons: ['mdi', 'ph']
   },
   ogImage: {
     host: 'https://uninbox.com',
@@ -71,14 +71,17 @@ export default defineNuxtConfig({
 
   //* Pinia
   pinia: {
-    autoImports: [['defineStore', 'definePiniaStore']]
+    autoImports: ['defineStore', ['defineStore', 'definePiniaStore']]
   },
 
   //* Nuxt-Security
   security: {
     headers: {
       crossOriginEmbedderPolicy: {
-        value: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+        value:
+          process.env.NODE_ENV === 'development'
+            ? 'unsafe-none'
+            : 'require-corp',
         route: '/**'
       }
     }

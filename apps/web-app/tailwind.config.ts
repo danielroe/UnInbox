@@ -9,5 +9,6 @@ export default <Partial<Config>>{
         display: ['CalSans', ...defaultTheme.fontFamily.sans]
       }
     }
-  }
+  },
+  plugins: [require('windy-radix-palette')]
 };
