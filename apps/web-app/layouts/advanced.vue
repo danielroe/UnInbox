@@ -7,9 +7,54 @@
       <div
         name="pinned"
         class="flex flex-row gap-4">
-        <LayoutGroupButton
-          icon="i-ph-password-thin"
-          name="Pin codes" />
+        <UPopover>
+          <LayoutGroupButton
+            icon="i-ph-password-thin"
+            name="Pin codes" />
+
+          <template #panel>
+            <div
+              class="p-4 rounded-lg flex flex-col bg-sand-3 gap-4 border-2 border-sand-6 ml-4">
+              <div
+                class="flex flex-row justify-between align-middle border-2 border-sand-3 bg-sand-5 p-2 gap-16 rounded">
+                <div class="flex flex-col gap-1">
+                  <p class="font-display text-md">Slack</p>
+                  <p class="text-sm">Login Code</p>
+                </div>
+                <UButton
+                  color="primary"
+                  variant="solid"
+                  size="2xs"
+                  label="Copy" />
+              </div>
+              <div
+                class="flex flex-row justify-between align-middle border-2 border-sand-3 bg-sand-5 p-2 rounded">
+                <div class="flex flex-col gap-1">
+                  <p class="font-display text-md">Twitch</p>
+                  <p class="text-sm">Login Code</p>
+                </div>
+                <UButton
+                  color="primary"
+                  variant="solid"
+                  size="2xs"
+                  label="Copy" />
+              </div>
+              <div
+                class="flex flex-row justify-between align-middle border-2 border-sand-3 bg-sand-5 p-2 rounded">
+                <div class="flex flex-col gap-1">
+                  <p class="font-display text-md">RandomSaas</p>
+                  <p class="text-sm">Verify Account</p>
+                </div>
+                <UButton
+                  color="primary"
+                  variant="solid"
+                  size="2xs"
+                  label="Open" />
+              </div>
+            </div>
+          </template>
+        </UPopover>
+
         <LayoutGroupButton
           icon="i-ph-bell"
           name="Notifications" />
