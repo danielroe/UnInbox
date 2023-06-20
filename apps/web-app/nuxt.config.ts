@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/hanko',
     'nuxt-security',
+    // 'nuxt-hanko',
     'nuxt-og-image',
     '@pinia/nuxt'
   ],
@@ -16,7 +17,9 @@ export default defineNuxtConfig({
     databaseUrl: process.env.NUXT_DATABASE_URL || '',
     emailApiUrl: process.env.NUXT_EMAIL_API_URL || '',
     emailApiKey: process.env.NUXT_EMAIL_API_KEY || '',
-    public: {}
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://uninbox.com'
+    }
   },
 
   // Styling
@@ -62,12 +65,12 @@ export default defineNuxtConfig({
    */
 
   //* Hanko
-  hanko: {
-    redirects: {
-      login: '/login',
-      success: '/dashboard'
-    }
-  },
+  // hanko: {
+  //   redirects: {
+  //     login: '/login',
+  //     success: '/dashboard'
+  //   }
+  // },
 
   //* Pinia
   pinia: {
